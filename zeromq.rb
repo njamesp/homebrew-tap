@@ -88,5 +88,19 @@ index 7875083..d6b68c6 100644
 -        
                  zmq_getsockopt (subSocket, ZMQ_RCVMORE, &more, &more_size);
                  zmq_msg_close (&msg);
+
+diff --git a/src/pgm_socket.cpp b/src/pgm_socket.cpp
+index 7925c6e..fc26161 100644
+--- a/src/pgm_socket.cpp
++++ b/src/pgm_socket.cpp
+@@ -325,7 +325,7 @@ int zmq::pgm_socket_t::init (bool udp_encapsulation_, const char *network_)
+     //  Set IP level parameters.
+     {
+ 		// Multicast loopback disabled by default
+-		const int multicast_loop = 0;
++		const int multicast_loop = 1;
+ 		if (!pgm_setsockopt (sock, IPPROTO_PGM, PGM_MULTICAST_LOOP,
+ 		      &multicast_loop, sizeof (multicast_loop)))
+ 		    goto err_abort;
          
 
