@@ -8,7 +8,8 @@ class Boost150 < Formula
   sha1 'ee06f89ed472cf369573f8acf9819fbc7173344e'
 
   def install
-    system "./bootstrap.sh", "--prefix=#{prefix}"
+    system "./bootstrap.sh", "--prefix=#{prefix}", "--with-python=#{HOMEBREW_PREFIX}/bin/python"
+
     system "./b2", "toolset=clang", "cxxflags=-std=c++0x -stdlib=libc++", "linkflags=-stdlib=libc++", "--without-signals", "install"
   end
 end
