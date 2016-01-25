@@ -2,10 +2,10 @@ require 'formula'
 
 #Builds Boost with clang and c++11
 
-class Boost158 < Formula
+class BoostMAJOR_VERSIONMINOR_VERSION < Formula
   homepage 'http://boost.org'
-  url 'http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz'
-  sha256 'a004d9b3fa95e956383693b86fce1b68805a6f71c2e68944fa813de0fb8c8102'
+  url 'http://sourceforge.net/projects/boost/files/boost/MAJOR_VERSION.MINOR_VERSION.0/boost_MAJOR_VERSION_MINOR_VERSION_0.tar.gz'
+  sha256 'SHA256SUM'
 
   def install
     system "./bootstrap.sh", "--libdir=#{prefix}/lib/", "--includedir=#{prefix}/include/", "--with-python=#{HOMEBREW_PREFIX}/bin/python"
