@@ -10,7 +10,7 @@ class Boost163 < Formula
   def install
     system "./bootstrap.sh", "--libdir=#{prefix}/lib/", "--includedir=#{prefix}/include/", "--with-python=#{HOMEBREW_PREFIX}/bin/python"
 
-    system "./b2", "toolset=clang", "cxxflags=-std=c++17 -stdlib=libc++", "linkflags=-stdlib=libc++", "--without-mpi", "--without-signals", "variant=release", "threading=multi", "install"
+    system "./b2", "toolset=clang", "cxxflags=-std=c++1z -stdlib=libc++", "linkflags=-stdlib=libc++", "--without-mpi", "--without-signals", "variant=release", "threading=multi", "install"
   end
 end
 
